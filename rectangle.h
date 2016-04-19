@@ -14,6 +14,7 @@
 #include <iomanip> // setpresion(4) for the fixed 4 values after decimal
 #include <ctime> // seed time
 #include <boost/random.hpp> // boost
+#include <fstream> //file i/o
 
 
 using namespace std;

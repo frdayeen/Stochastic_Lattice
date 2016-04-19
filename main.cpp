@@ -13,6 +13,10 @@
 
 
 void Rect_Print() {
+    ofstream rectangleOut;
+    rectangleOut.open ("Rectangle.txt");
+
+
     double TotalArea = 0.0;
     cout<<endl;
 
@@ -22,9 +26,13 @@ void Rect_Print() {
         double Area = (Rect[b].x0 - Rect[b].x1) * (Rect[b].y0 - Rect[b].y1);
 
         cout<<fixed<<setprecision(4)<< (b+1)<<"             ("<<Rect[b].x0<<","<<Rect[b].y0<<")    ("<<Rect[b].x1<<","<<Rect[b].y1<<")    "<<Area<<endl;
-        TotalArea += Area;
-    }
+        rectangleOut<< (b+1)<<"             ("<<Rect[b].x0<<","<<Rect[b].y0<<")    ("<<Rect[b].x1<<","<<Rect[b].y1<<")    "<<Area<<endl;
 
+        TotalArea += Area;
+
+
+    }
+    rectangleOut.close();
     cout<<"Number of divisions (N = 3j-2) = "<<Rect_Count << ",    Total Area = "<<TotalArea<<endl;
 }
 
